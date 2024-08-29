@@ -1,0 +1,111 @@
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2022/12/02/03/30/sky-7630185_1280.png);
+  background-position-y: -290px;
+  background-size: 100%;
+}
+
+#container {
+  background: linear-gradient(
+    140.2deg,
+    #a081ce 10.5%,
+    rgb(255, 180, 239) 67.7%
+  );
+  display: block;
+  height: 70vb;
+  width: 650px;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 40px;
+}
+#header {
+  background-color: #f9cde6be;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  padding-bottom: 15px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+#search-input {
+  font-size: 16px;
+  padding: 10px;
+  margin-left: 30px;
+  background-color: #d7cece;
+  width: 430px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+#search-button {
+  font-size: 16px;
+  background-color: #d7cece;
+  color: black;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+/* main body styles */
+#main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.city-details {
+  width: 45%;
+  text-align: left;
+  border-radius: 40px;
+  margin-left: 20px;
+  padding-left: 40px;
+  background-color: aquamarine;
+}
+.city-name {
+  font-size: 35px;
+  text-align: left;
+}
+.current-day {
+  font-size: 19px;
+}
+.current-time {
+  font-size: 19px;
+}
+
+/* TEMPERATURE */
+.city-temp {
+  width: 40%;
+  margin-right: 15px;
+}
+.emoji {
+  font-size: 30px;
+}
+.current-temperature {
+  font-size: 45px;
+  text-align: center;
+}
+.degrees {
+  font-size: 30px;
+  position: relative;
+  top: -13px;
+  left: -8px;
+}
+.celsius {
+  position: relative;
+  top: -17px;
+  left: -17px;
+  font-size: 30px;
+}
+.forecast-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin: 10px;
+  height: 145px;
+}
+.forecast {
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.089);
+  padding: 30px;
+  margin: 10px;
+}
