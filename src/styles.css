@@ -65,10 +65,13 @@ body {
   text-align: left;
 }
 .current-day {
-  font-size: 19px;
+  font-size: 17px;
 }
 .current-time {
-  font-size: 19px;
+  font-size: 17px;
+}
+.weather-condition {
+  font-size: 17px;
 }
 
 /* TEMPERATURE */
@@ -77,11 +80,15 @@ body {
   margin-right: 15px;
 }
 .emoji {
-  font-size: 30px;
+  font-size: 40px;
+  position: relative;
+  top: 80px;
 }
 .current-temperature {
-  font-size: 45px;
+  font-size: 65px;
   text-align: center;
+  position: relative;
+  bottom: 35px;
 }
 .degrees {
   font-size: 30px;

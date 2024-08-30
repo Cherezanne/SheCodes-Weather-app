@@ -1,33 +1,47 @@
-// Time
-let now = new Date();
-let day = now.getDay();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let currentTime = document.querySelector(".current-time");
-currentTime.innerHTML = `${hours}:${minutes}`;
-// Date
-function formatDate(date) {
-  let days = ["Sun", "Mon", "Tue", "Wed"];
-}
-let currentDay = document.querySelector(".current-day");
-currentDay.innerHTML = `${day}`;
-
 // Search Form
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-input");
-  let cityElement = document.querySelector(".city-name");
-  cityElement.innerHTML = searchInput.value;
+  let city = searchInput.value;
+
+  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemp);
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
 // Change Temperature
+function displayTemp(response) {
+  let temperature = Math.round(response.data.temperature.current);
+  let temperatureElement = document.querySelector(".current-temperature");
+  temperatureElement.innerHTML = temperature;
 
-
-
-function changeTemp (response) {
-let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key=${apiKey}`;
+  let cityElement = document.querySelector(".city-name");
+  cityElement.innerHTML = response.data.city;
 }
-axios.get(apiUrl)then(changeTemp);
+// Time
+
+// Date
+
+function formatDate(date) {
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let day = date.getDay();
+
+  if (hours <= 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes <= 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = ["Sun", "Mon", "Tue", "Wed"];
+
+  let formattedDay = day[days];
+  return `${formattedDay} ${hours}:${minutes}`;
+}
+let currentDay = document.querySelector(".current-day");
+let now = new Date();
+currentDay.innerHTML = formatDate(now);
