@@ -78,29 +78,30 @@ body {
 .city-temp {
   width: 40%;
   margin-right: 15px;
+  height: 150px;
 }
 .emoji {
   font-size: 40px;
   position: relative;
-  top: 80px;
+  top: 60px;
 }
 .current-temperature {
   font-size: 65px;
   text-align: center;
   position: relative;
-  bottom: 35px;
+  bottom: 60px;
 }
 .degrees {
   font-size: 30px;
   position: relative;
-  top: -13px;
+  top: -19px;
   left: -8px;
 }
 .celsius {
   position: relative;
   top: -17px;
   left: -17px;
-  font-size: 30px;
+  font-size: 32px;
 }
 .forecast-container {
   display: flex;

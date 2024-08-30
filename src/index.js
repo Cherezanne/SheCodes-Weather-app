@@ -17,10 +17,12 @@ function displayTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector(".current-temperature");
   temperatureElement.innerHTML = temperature;
-
   let cityElement = document.querySelector(".city-name");
   cityElement.innerHTML = response.data.city;
+  
+  let weatherCondition = response.data.condition;
 }
+
 // Time
 
 // Date
