@@ -22,13 +22,16 @@ function displayTemp(response) {
   let weatherCondition = document.querySelector(".weather-condition");
   let humidityElement = document.querySelector(".humidity-percent");
   let windSpeed = document.querySelector(".wind-speed");
-  let iconElement = document.querySelector(".emoji");
+  let iconElement = document.querySelector(".icon");
+  let timeElement = document.querySelector(".time");
+  let now = new Date(response.data.time * 1000);
 
   cityElement.innerHTML = response.data.city;
   weatherCondition.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = `${response.data.temperature.humidity}&#37`;
   windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
-  (response.data.condition.icon_url);
+  iconElement.innerHTML = `<img src = "${response.data.condition.icon_url}"class = "weather-app-icon"/>`;
+  timeElement.innerHTML = formatDate(now);
 }
 
 // Date
@@ -36,7 +39,10 @@ function displayTemp(response) {
 function formatDate(date) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+
+  let day = days[date.getDay()];
 
   if (hours <= 10) {
     hours = `0${hours}`;
@@ -45,11 +51,5 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  let days = ["Sun", "Mon", "Tue", "Wed"];
-
-  let formattedDay = day[days];
-  return `${formattedDay} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes}`;
 }
-let currentDay = document.querySelector(".current-day");
-let now = new Date();
-currentDay.innerHTML = formatDate(now);

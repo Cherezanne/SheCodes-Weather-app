@@ -3,6 +3,7 @@ body {
   background-position-y: -290px;
   background-size: 100%;
   font-family: "Nunito", Arial;
+  color: rgba(0, 0, 0, 0.81);
 }
 
 #container {
@@ -31,7 +32,7 @@ body {
   font-size: 16px;
   padding: 10px;
   margin-left: 30px;
-  background-color: #d7cece;
+  background-color: #8b43781e;
   width: 430px;
   border-radius: 10px;
   border: none;
@@ -65,7 +66,7 @@ body {
   font-size: 35px;
   text-align: left;
 }
-.current-day {
+.time {
   font-size: 17px;
 }
 .current-time {
@@ -80,32 +81,24 @@ body {
   width: 40%;
   margin-right: 15px;
   height: 150px;
+  text-align: center;
 }
 .icon {
   position: relative;
   top: 40px;
-  height: 73px;
+  height: 70px;
 }
 .current-temperature {
-  font-size: 65px;
-  text-align: center;
+  font-size: 75px;
   position: relative;
-  bottom: 95px;
-  margin-left: 15px;
+  top: 15px;
 }
-.degrees {
-  font-size: 30px;
+.weather-app-unit {
+  font-size: 43px;
   position: relative;
-  top: -19px;
-  left: -8px;
+  top: -7px;
 }
-.celsius {
-  position: relative;
-  top: -17px;
-  left: -17px;
-  font-size: 32px;
-}
-.forecast-container {
+/* .forecast-container {
   display: flex;
   justify-content: space-between;
   font-size: 16px;
@@ -117,4 +110,4 @@ body {
   background-color: rgba(0, 0, 0, 0.089);
   padding: 30px;
   margin: 10px;
-}
+} */
