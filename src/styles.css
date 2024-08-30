@@ -38,10 +38,13 @@ body {
   border: none;
   cursor: pointer;
 }
+#search-input:hover {
+  background-color: #642f592f;
+}
 #search-button {
   font-size: 16px;
-  background-color: #d25ab0;
-  color: black;
+  background-color: #a45c90d5;
+  color: rgb(239, 224, 229);
   width: 100px;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -49,6 +52,12 @@ body {
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  letter-spacing: 1.5px;
+}
+#search-button:hover {
+  background-color: #cc8ab9f7;
+  transition: ease-in-out 250ms;
+  color: #37092d;
 }
 /* main body styles */
 #main-container {
