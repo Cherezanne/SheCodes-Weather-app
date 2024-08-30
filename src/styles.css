@@ -2,6 +2,7 @@ body {
   background-image: url(https://cdn.pixabay.com/photo/2022/12/02/03/30/sky-7630185_1280.png);
   background-position-y: -290px;
   background-size: 100%;
+  font-family: "Nunito", Arial;
 }
 
 #container {
