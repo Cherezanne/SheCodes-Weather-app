@@ -17,13 +17,19 @@ function displayTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector(".current-temperature");
   temperatureElement.innerHTML = temperature;
-  let cityElement = document.querySelector(".city-name");
-  cityElement.innerHTML = response.data.city;
-  
-  let weatherCondition = response.data.condition;
-}
 
-// Time
+  let cityElement = document.querySelector(".city-name");
+  let weatherCondition = document.querySelector(".weather-condition");
+  let humidityElement = document.querySelector(".humidity-percent");
+  let windSpeed = document.querySelector(".wind-speed");
+  let iconElement = document.querySelector(".emoji");
+
+  cityElement.innerHTML = response.data.city;
+  weatherCondition.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}&#37`;
+  windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+  (response.data.condition.icon_url);
+}
 
 // Date
 
