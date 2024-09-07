@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Weather App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
   </head>
@@ -14,76 +17,60 @@
     <div id="container">
       <div id="header">
         <form id="search-form">
-        <input
-          type="search"
-          id="search-input"
-          placeholder="Enter a city..."
-          required
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Enter a city..."
+            required
           />
-        <button id="search-button">Search</button>
+          <button id="search-button">Search</button>
         </form>
       </div>
 
       <div id="main-container">
         <div class="city-details">
-        <h2 class="city-name">Paris</h2>
-        <span class="today"></span>
-        <span class="time">Fri 10:00</span>
-        <span class="weather-condition">clear sky</span>
-      <br />
-        <span>Humidity:</span>
-        <span class="humidity-percent"><strong>15&#37</strong></span>
-        <span>Wind:</span>
-        <span class="wind-speed"><strong>25km/h</strong></span>
+          <h2 class="city-name"></h2>
+          <span class="today"></span>
+          <span class="time"></span>
+          <span class="weather-condition"></span>
+          <br />
+          <span>Humidity:</span>
+          <span class="humidity-percent"><strong></strong></span>
+          <span>Wind:</span>
+          <span class="wind-speed"><strong></strong></span>
         </div>
 
-      <div class="city-temp">
-        <span class = "icon-container"></span>
-        <span class="icon"></span>
-        <span class="current-temperature">25</span> 
-        <span class = "weather-app-unit">℃</span>
+        <div class="city-temp">
+          <span class="icon-container"></span>
+          <span class="icon"></span>
+          <span class="current-temperature"></span>
+          <span class="weather-app-unit">℃</span>
         </div>
       </div>
 
       <!-- Forecast -->
       <div class="forecast-container">
         <div class="forecast">
-        <div class="forecast-date"></div>
-        <div class = "forecast-icon">☀️</div>
-        <div class = "forecast-temperatures">29&deg; 
-        <div class = "forecast-temperatures"><strong>16&deg;</strong>
-
-        </div></div></div>
-
-        <!-- <div class="forecast">Sat
-        <div class = "forecast-icon">☀️</div>
-        <div class = "forecast-temperatures">29&deg; 
-        <div class = "forecast-temperatures"><strong>16&deg;</strong>
-
-        </div>  </div></div>
-
-        <div class="forecast">Mon
-        <div class = "forecast-icon">☀️</div>
-        <div class = "forecast-temperatures">29&deg; 
-        <div class = "forecast-temperatures"><strong>16&deg;</strong>
-
-        </div>  </div></div>
-
-
-        <div class="forecast">Tue
-        <div class = "forecast-icon">☀️</div>
-        <div class = "forecast-temperatures">29&deg; 
-        <div class = "forecast-temperatures"><strong>16&deg;</strong>
-
-        </div>  </div></div> -->
-      
-    </div>
+          <div class="forecast-date"></div>
+          <div class="forecast-icon">☀️</div>
+          <div class="forecast-temperatures">
+            29&deg;
+            <div class="forecast-temperatures"><strong>16&deg;</strong></div>
+          </div>
+        </div>
+      </div>
       <footer>
-        <div id = "footer-info">
-        <p>This project was coded by 
-        <a href="https://github.com/Cherezanne/SheCodes-Weather-app">Cherezanne Morgan,</a> open-sourced on GitHub and
-        <a href="https://chere-weather-app.netlify.app/">hosted on Netlify</a>
-        </p>
+        <div id="footer-info">
+          <p>
+            This project was coded by
+            <a href="https://github.com/Cherezanne/SheCodes-Weather-app"
+              >Cherezanne Morgan,</a
+            >
+            open-sourced on GitHub and
+            <a href="https://chere-weather-app.netlify.app/"
+              >hosted on Netlify</a
+            >
+          </p>
         </div>
       </footer>
     </div>

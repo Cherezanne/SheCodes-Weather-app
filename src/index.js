@@ -32,6 +32,8 @@ function displayTemp(response) {
   windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
   iconElement.innerHTML = `<img src = "${response.data.condition.icon_url}"class = "weather-app-icon"/>`;
   timeElement.innerHTML = formatDate(now);
+
+  getForecast(response.data.city);
 }
 
 // Date
@@ -52,6 +54,14 @@ function formatDate(date) {
   }
 
   return `${day} ${hours}:${minutes}`;
+}
+
+function getForecast(city) {
+  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=Lisbon}&key=${apiKey}&unit=metric`;
+
+  axios(apiUrl).then(displayForecast);
+  console.log(apiUrl);
 }
 
 function displayForecast() {
@@ -76,4 +86,4 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast();
+displayForecast("Paris");
