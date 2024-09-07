@@ -107,40 +107,46 @@ body {
   position: relative;
   top: -7px;
 }
-.forecast-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 16px;
-  margin: 10px;
-  height: 145px;
-}
 .humidity-percent {
   color: #e13778;
 }
 .wind-speed {
   color: #e13778;
 }
+.forecast-container {
+  display: flex;
+  margin-top: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 .forecast {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
   border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.089);
-  padding: 30px;
-  margin: 10px;
+  background-color: #40143711;
+  height: 130px;
   text-align: center;
+  width: 610px;
+}
+.forecast-date {
+  margin-top: 10px;
 }
 .forecast-icon {
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
+  font-size: 35px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 .forecast-temperatures {
   display: flex;
-  gap: 10px;
+  text-align: center;
+  gap: 4px;
 }
 
 #footer-info {
   margin-left: 30px;
   margin-right: 20px;
   font-size: 14px;
-  padding-top: 20px;
+  padding-top: 5px;
 }
