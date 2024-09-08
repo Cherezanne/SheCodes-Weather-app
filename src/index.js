@@ -73,9 +73,6 @@ function getForecast(city) {
 }
 
 function displayForecast(response) {
-  console.log(response.data);
-
-  let forecastDay = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
@@ -107,6 +104,6 @@ function displayForecast(response) {
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("submit", searchSubmit);
 
 searchCity("Paris");
