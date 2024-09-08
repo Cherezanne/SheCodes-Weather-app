@@ -13,7 +13,7 @@ body {
     rgb(255, 180, 239) 67.7%
   );
   display: block;
-  height: 70vb;
+  height: 75vb;
   width: 650px;
   margin: 0 auto;
   margin-top: 100px;
@@ -156,5 +156,5 @@ img {
   margin-left: 30px;
   margin-right: 20px;
   font-size: 14px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
