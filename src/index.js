@@ -1,17 +1,3 @@
-// Search Form
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-input");
-  let city = searchInput.value;
-
-  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}}&key=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(displayTemp);
-}
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
-
 // Change Temperature
 function displayTemp(response) {
   let temperature = Math.round(response.data.temperature.current);
@@ -56,6 +42,22 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// Search Form
+function searchCity(city) {
+  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemp);
+}
+
+function searchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-input");
+
+  searchCity(searchInput.value);
+}
+
+// Forecast
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
@@ -76,10 +78,11 @@ function displayForecast(response) {
   let forecastDay = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  response.data.daily.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
        <div class="forecast">
         <div class="forecast-date"> ${formatDay(day.time)}
        <div class = "forecast-icon">
@@ -96,9 +99,14 @@ function displayForecast(response) {
        </div>
        </div>
     `;
+    }
   });
+
   let forecastElement = document.querySelector(".forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
-displayForecast("Paris");
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchCity);
+
+searchCity("Paris");
