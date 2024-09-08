@@ -56,33 +56,48 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function getForecast(city) {
-  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=Lisbon}&key=${apiKey}&unit=metric`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
 
-  axios(apiUrl).then(displayForecast);
-  console.log(apiUrl);
+  return days[date.getDay()];
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector(".forecast");
+function getForecast(city) {
+  let apiKey = "24ba7f0701b9cc6bb1dftb3aece64o61";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}}&key=${apiKey}&unit=metric`;
 
-  let forecastDay = ["Sun", "Mon", "Tues", "Wed"];
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
+  let forecastDay = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  forecastDay.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `
        <div class="forecast">
-        <div class="forecast-date">${day}
-       <div class = "forecast-icon">☀️</div>
-       <div class = "forecast-temperatures">29&deg; 
-       <div class = "forecast-temperatures"><strong>16&deg;</strong>
-       </div></div></div></div>
+        <div class="forecast-date"> ${formatDay(day.time)}
+       <div class = "forecast-icon">
+       <img src = "${day.condition.icon_url}" />
+       </div>
+       <div class = "forecast-temperatures">${Math.round(
+         day.temperature.maximum
+       )}&deg; 
+       <div class = "forecast-temperatures">${Math.round(
+         day.temperature.minimum
+       )}&deg;
+       </div>
+       </div>
+       </div>
+       </div>
     `;
   });
-
+  let forecastElement = document.querySelector(".forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
